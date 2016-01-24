@@ -1,0 +1,47 @@
+\documentclass[a4paper,12pt]{article} % Prepara un documento per carta A4, con un bel font grande
+
+\usepackage[italian]{babel} % Adatta LaTeX alle convenzioni tipografiche italiane,
+% e ridefinisce alcuni titoli in italiano, come "Capitolo" al posto di "Chapter",
+% se il vostro documento è in italiano
+\usepackage[T1]{fontenc} % Riga da togliere se si compila con PDFLaTeX
+\usepackage[utf8]{inputenc} % Consente l'uso caratteri accentati italiani
+
+\frenchspacing % forza LaTeX ad una spaziatura uniforme, invece di lasciare più spazio
+% alla fine dei punti fermi come da convenzione inglese
+
+\title{Esempio di documento in \LaTeX} % \LaTeX è una macro che compone il logo "LaTeX"
+% I commenti (introdotti da %) vengono ignorati
+
+\author{Mario Rossi}
+\date{8 aprile 2002}
+% in alternativa a \date il comando \today introduce la data di sistema.
+
+\begin{document}
+\maketitle % Produce il titolo a partire dai comandi \title, \author e \date
+
+\begin{abstract} % Questo è l'inizio dell'ambiente "abstract".
+% L'ambiente abstract è fatto per contenere un riassunto del contenuto.
+Breve dimostrazione dell'uso di \LaTeX.
+\end{abstract} % Qui termina l'ambiente ''abstract''
+
+\tableofcontents % Prepara l'indice generale
+
+\section{Testo normale} %
+È possibile scrivere il testo dell'articolo normalmente, ed 
+\emph{enfatizzare} alcune parti del discorso. %
+Una riga vuota nel testo indica la fine di un paragrafo.
+
+Quindi questo è un nuovo paragrafo.
+
+\section{Formule} %
+La forza di \LaTeX\ sono però le formule, sia in linea (ad esempio \(y=x^2\))
+ che messe in bella mostra in un'area propria:
+\[y=\sqrt{x+y}\]
+
+\section{Poesia} %
+L'ambiente ``verse'' è usato per comporre tipograficamente le poesie:
+\begin{verse}
+La vispa Teresa avea tra l'erbetta\\ % la doppia barra inversa forza a capo
+al volo sorpresa gentil farfalletta.
+\end{verse}
+\end{document}
