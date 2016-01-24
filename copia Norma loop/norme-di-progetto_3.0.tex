@@ -1,0 +1,1116 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[latin,italian]{babel}
+\usepackage[hmargin=3cm,vmargin=3cm]{geometry}
+\usepackage{makeidx}
+\usepackage{tabularx}
+\usepackage{widetable}
+\usepackage{booktabs}
+\usepackage{textcomp}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{rotfloat}
+\usepackage{lastpage}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{epstopdf}
+\usepackage{graphicx}
+\makeindex
+\hyphenation{do-cu-men-to}
+\hyphenation{re-a-liz-za-zio-ne}
+\hyphenation{vi-sua-liz-za-zio-ne}
+\hyphenation{do-cu-men-ti}
+\hyphenation{pa-gi-na}
+\hyphenation{dia-gram-mi}
+\hyphenation{mo-di-fi-che}
+\hyphenation{ve-ri-fi-ca-re}
+\makeindex
+\title{\textbf{{\fontsize{8mm}{5mm}\selectfont Norme Di Progetto}}}
+\date{04 Aprile 2012}
+\usepackage{hyperref}
+\hypersetup{colorlinks, linkcolor=black, urlcolor=blue}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\includegraphics[scale=0.28]{logo_testo.png}}
+\fancyhead[R]{\leftmark}
+\fancyfoot[L]{Universit\`a degli studi di Padova - IS 2011/2012 \\ \url{loop_unipd@googlegroups.com}}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\begin{center}
+\includegraphics[scale=0.50]{logo.png}
+\end{center}
+\begin{table}[b!]
+\begin{tabularx}{\textwidth}{r X}
+\multicolumn{2}{c}
+{\textbf{Informazioni del documento}} \\
+\midrule
+\textbf{Nome Documento} &  \vline \hspace{3.5 mm} Norme di Progetto \\
+\textbf{Versione} & \vline \hspace{3.5 mm} 3.0 \\
+\textbf{Stato} & \vline \hspace{3.5 mm} Formale \\
+\textbf{Uso} & \vline \hspace{3.5 mm} Interno\\
+\textbf{Data Creazione} & \vline \hspace{3.5 mm} 27 Novembre 2011 \\
+\textbf{Data Ultima Modifica} & \vline \hspace{3.5 mm} 04 Aprile 2012 \\
+\textbf{Redazione}	& \vline \hspace{3.5 mm}  Brusco Nicol\`o \\
+					& \vline \hspace{3.5 mm}  Silvestri Erica \\
+					& \vline \hspace{3.5 mm}  Battistin Giulia \\				
+\textbf{Approvazione} 	& \vline \hspace{3.5 mm}  Bertan Marco \\
+\textbf{Verifica}		& \vline \hspace{3.5 mm}  Crivellaro Marco \\	
+\textbf{Committente} & \vline \hspace{3.5 mm} Prof. Cardin Riccardo\\
+\textbf{Lista di distribuzione} & \vline \hspace{3.5 mm}  Prof. Vardanega Tullio \\
+								& \vline \hspace{3.5 mm}  Prof. Cardin Riccardo \\
+								& \vline \hspace{3.5 mm}  LOOP \\
+
+\end{tabularx}
+\end{table}
+
+\newpage
+\null
+\thispagestyle{empty}
+\newpage
+
+\newpage
+\fancyhead[R]{REGISTRO DELLE MODIFICHE}
+\fancyfoot[R]{\thepage}
+\pagenumbering{Roman}
+\hspace{30 mm}
+\section*{Registro delle modifiche}
+\begin{longtable}{{p{0.10\textwidth}p{0.15\textwidth}p{0.12\textwidth}p{0.50\textwidth}}}
+\textbf{Versione} & \textbf{Autore} & \textbf{Data} & \hspace{15 mm} \textbf{Descrizione} \\
+\midrule
+3.0 & M. Bertan & 04/04/2012 & Approvazione del documento.\\
+\midrule
+2.3.1 & G. Battistin & 16/03/2012 & Correzione errori.\\
+\midrule
+2.3 & G. Battistin & 14/03/2012 & Ampliamento capitolo ``Norme di Sviluppo'' e ``Tecnologie''.\\
+\midrule
+2.2 & G. Battistin & 13/03/2012 & Ampliamento capitolo ``Attivit\`a di verifica''.\\
+\midrule
+2.1 & G. Battistin & 07/03/2012 & Correzione errori rilevati in sede RP.\\
+\midrule
+2.0 & M. Bertan & 29/02/2012 & Approvazione del documento.\\
+\midrule
+1.6.1 & E. Silvestri & 25/02/2012 & Correzione errori. \\
+\midrule
+1.6 & E. Silvestri & 14/02/2012 & Ampliamento capitolo ``Norme di sviluppo'' e ``Software utilizzati''. \\
+\midrule
+1.5 & E. Silvestri & 25/01/2012 & Ampliamento capitolo ``Attivit\`a di verifica'' e ``Tecnologie''. \\
+\midrule
+1.4 & E. Silvestri & 22/01/2012 & Ampliamento capitoli ``Norme di sviluppo'' e ``Gestione dei cambiamenti''. \\
+\midrule
+1.3 & E. Silvestri & 20/01/2012 & Aggiunta riferimenti normativi e capitolo ``Attivit\`a di verifica''. \\
+\midrule
+1.2 & E. Silvestri & 18/01/2012 & Cambiamento strutturale del documento con aggiunta dei capitoli ``Norme di sviluppo'', ``Attivit\`a di verifica'' e ``Gestione dei cambiamenti''.\\
+\midrule
+1.1 & N. Brusco & 11/01/2012 & Correzione errori grammaticali e tipografici rilevati in sede di RR. \\
+\midrule
+1.0 & M. Bertan &14/12/2011 & Approvazione del documento.\\
+\midrule
+0.4.1 & N. Brusco &09/12/2011 & Correzioni errori.\\
+\midrule
+0.4 & N.  Brusco &06/12/2011 & Ampliamento capitoli ``Tecnologie'' e ``Analisi e progettazione''.\\
+\midrule
+0.3.2 & N. Brusco &05/12/2011 & Correzione degli errori lessicali.\\
+\midrule
+0.3.1 & N. Brusco &03/12/2011 & Correzione degli errori grammaticali e ortografici.\\
+\midrule
+0.3 & N. Brusco &03/12/2011 & Ampliamento capitoli ``Documenti'', ``Norme di codifica''.\\
+\midrule
+0.2 & N. Brusco &30/11/2011 & Correzione ortografica, e ampliamento capitoli ``Documenti'', ``Tecnologie''.\\
+\midrule
+0.1 & N. Brusco &27/11/2011 & Prima stesura del documento. Redazione dei paragrafi ``Introduzione'', ``Organizzazione Interna'' e ``Scadenze''.\\
+
+
+\caption{Versionamento del documento}
+\end{longtable}
+
+\newpage
+\fancyhead[R]{\leftmark}
+\tableofcontents
+\printindex
+
+
+\newpage
+\listoftables
+
+\newpage
+\listoffigures
+
+\newpage
+\pagenumbering{arabic}
+\fancyfoot[R]{pag. \thepage\ di \pageref{LastPage}}
+\section{Sommario}
+Questo documento, redatto da Nicol\`o Brusco per conto del gruppo di lavoro LOOP, contiene le norme di progetto del capitolato \textbf{EQuery}, commissionato dal Prof. Cardin Riccardo in rappresentanza dell'azienda \textbf{Lifeware Dev.}.
+Scopo del documento \`e mostrare le norme che si sono adottate nel realizzare il prodotto. Ogni vincolo normativo \`e stato dichiarato e descritto. 
+\newpage
+
+\section{Introduzione}
+\subsection{Scopo del documento}
+Con il seguente documento si vogliono presentare le convenzioni adottate dal team LOOP per la realizzazione del progetto \textbf{EQuery}. Saranno citate e descritte tutte le norme che regoleranno l'intero svolgimento del progetto. Ogni componente del team \`e tenuto a leggere e sottoscrivere tale documento. In caso di necessit\`a un componente pu\`o  contattare l'Amministratore per suggerire cambiamenti o miglioramenti da apportare a questo documento. 
+\subsection{Scopo del prodotto}
+Il progetto \textbf{EQuery} si affigge come obiettivo la realizzazione di un sistema di interrogazione di un \underline{database} preesistente tramite interfaccia grafica \underline{web} basata su tecnologia HTML5. Oltre all'integrazione con terze parti, il sistema deve coadiuvare lo sviluppo di applicazioni basate su funzionalit\`a \underline{CRUD}. Il prodotto dovr\`a essere in gran parte utilizzato da un bacino di utenza estraneo all'informatica.
+\subsection{Glossario}
+Viene allegato il glossario nel file ``\textit{glossario\_3.0.pdf}'' nel quale vengono definiti tutti i termini sottolineati all'interno dei documenti.
+\subsection{Riferimenti}
+\subsubsection{Normativi}
+\begin{itemize}
+\item Capitolato d'appalto EQuery\\
+\url{http://www.math.unipd.it/~tullio/IS-1/2011/Progetto/C4.pdf}
+\item Standard UML 2.0\\
+\url{http://www.uml.org/}
+\item Web design and applications standard W3C\\
+\url{http://www.w3.org/standards/webdesign/}
+\item Web architecture standard W3C\\
+\url{http://www.w3.org/standards/webarch/}
+\item XML Technology standard W3C\\
+\url{http://www.w3.org/standards/xml/}
+\item \underline{ISO:IEC} 8859-1 Standard per il trattamento informatico dei testi\\
+\url{http://std.dkuug.dk/JTC1/SC2/WG3/docs/n411.pdf}
+\item \underline{IEEE} Computer 39(6) Giugno 2006 Definisce 10 regole di buona programmazione
+\url{http://spinroot.com/p10/}
+\end{itemize}
+\subsubsection{Informativi}
+\begin{itemize}
+\item Materiale del corso di Ingegneria del Software 2011-2012 \\
+\url{http://www.math.unipd.it/~tullio/IS-1/2011/}
+\item Regole di progetto didattico\\
+\url{http://www.math.unipd.it/~tullio/IS-1/2011/Progetto/PD01b.html}
+\item Java Code Conventions\\
+\url{http://java.sun.com/docs/codeconv/CodeConventions.pdf}
+\item \underline{IEEE} 1016:1998 Recommended Practice for Software Design Descriptions \\
+\url{http://standards.ieee.org/findstds/standard/1016-1998.html}
+%\item \underline{IEEE} 830:1999 Descrive il comportamento del sistema, e l'interazione con gli utenti (Casi d'Uso)\\
+%\url{http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=1238}
+\item \underline{ISO/IEC} 90003:2004 Software engineering \\
+\url{http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=35867}
+\item \underline{ISO/IEC} 12207:2008 Systems and software engineering - Software life cycle processes \\
+\url{http://www.iso.org/iso/catalogue_detail?csnumber=43447}
+
+\item L'arte di scrivere con \LaTeX - Gruppo Utilizzatori Italiani di \TeX e \LaTeX \\
+\url{http://www.lorenzopantieri.net/LaTeX_files/ArteLaTeX.pdf}
+\item \underline{ISO/IEC} 14598:2001 Software engineering - Product evaluation\\
+\url{http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=24907}
+\item \underline{ISO/IEC} 15939:2007 Systems and software engineering - Measurement process\\
+\url{http://www.iso.org/iso/catalogue_detail.htm?csnumber=44344}
+\end{itemize}
+
+\pagebreak
+
+\section{Comunicazioni}
+\subsection{Interne}
+\subsubsection{Avvisi Generali}
+Per gli avvisi di carattere generale rivolti all'intero team, \`e attivo uno spazio pubblico nella sezione Groups di Google.
+Il gruppo \`e raggiungibile tramite invito all'indirizzo:
+\begin{center}
+\url{http://groups.google.com/group/loop_unipd/}
+\end{center}
+Grazie a questo strumento si ha un servizio di \underline{mailing list} che ci permette di comunicare sia tra singoli utenti, ma anche in modo generico riferendoci a tutti gli iscritti al gruppo.
+\subsubsection{Comunicazioni tra singoli membri}
+Per avere un'interazione pi\`u rapida tra singoli membri del team, si utilizza il software Skype v2.2 beta raggiungibile all'indirizzo: 
+\begin{center}
+\url{http://www.skype.com/intl/it/get-skype/on-your-computer/linux/}
+\end{center} 
+Quest'ultimo viene utilizzato durante il lavoro svolto a casa o fuori sede. 
+Per comunicazioni di tipo formale si \`e comunque preferito lo strumento sopraelencato (Google Groups).
+\subsection{Esterne}
+Le comunicazioni verso il Committente sono gestite direttamente dal Responsabile del gruppo attraverso l'indirizzo di posta elettronica:
+\begin{center}
+\url{loop_unipd@googlegroups.com}
+\end{center}
+In questo modo si evita la perdita di tempo e risorse causata da possibili messaggi ridondanti. Inoltre si assicura, durante le varie fasi dello sviluppo, una comunicazione diretta tra Responsabile e Committente. 
+\newpage
+
+\section{Riunioni}
+\subsection{Interne}
+Gli incontri tra i componenti del gruppo vengono registrati su un calendario pubblico, reso disponibile su Google Calendar. Il Responsabile ha il compito di organizzare questi incontri in base alla disponibilit\`a di ogni singolo componente. Grazie allo strumento Google Docs ogni partecipante rende pubblica la sua disponibilit\`a. Le sedi designate per questi incontri sono:
+\begin{itemize}
+\item Plesso Paolotti Via Belzoni 7, Padova
+\item Torre Archimede - Sede del Dipartimento di Matematica Pura ed Applicata Via Trieste 63, Padova
+\end{itemize} 
+\subsection{Esterne}
+Gli incontri con il proponente sono gestiti direttamente dal Responsabile del gruppo. Ad ogni incontro viene stilato un verbale che evidenzia i chiarimenti emersi. Quest'ultimo viene inserito all'interno del \underline{repository} e discusso tra i componenti del gruppo. Ogni componente del team pu\`o richiedere un incontro esterno, inserendo la propria richiesta nella \underline{mailing list} del gruppo motivandola con una breve descrizione.
+\subsubsection{Verbali}
+Ogni verbale deve contenere le seguenti informazioni:
+\begin{itemize}
+\item \textbf{Numero verbale}: intero progressivo che indica il numero di verbali che fino a quell'istante sono stati redatti (compreso il verbale in analisi)
+\item \textbf{Data incontro}: indica la data effettiva dell'incontro tra il Responsabile del team e il Committente
+\item \textbf{Luogo incontro}: indica la posizione geografica in cui si svolge l'incontro
+\item \textbf{Ora inizio}: ora di inizio incontro
+\item \textbf{Durata incontro}: durata in minuti dell'incontro
+\item \textbf{Partecipanti}: elenco dei partecipanti
+\item \textbf{Lista quesiti}: elenco domande poste al Committente
+\item \textbf{Risposte}: elenco dei chiarimenti ricevuti
+\item \textbf{Note}: note conclusive riguardanti l'incontro
+\end{itemize} 
+
+\newpage
+\section{Norme di sviluppo}
+
+\subsection{Analisi iniziale}
+In questa fase il gruppo ha stabilito quali documenti devono essere prodotti per una miglior gestione dello sviluppo del progetto. Le norme per tali documenti sono descritte di seguito.
+
+\subsubsection{Piano di Progetto}
+Stabilisce la pianificazione generale del progetto, studiando e motivando quale ciclo di vita adottare, analizzando i rischi derivanti da progetto, attivit\`a e risorse ed infine fornendo il preventivo economico suddiviso per fasi, ruoli e persone. Nello specifico il documento contiene le seguenti sezioni: 
+\begin{itemize}
+\item \textbf{Organigramma}: contiene informazioni sui ruoli e sui componenti del team LOOP
+\item \textbf{Ciclo di vita}: contiene informazioni sul ciclo di vita adottato e le relative motivazioni di tale scelta
+\item \textbf{Analisi dei rischi}: contiene informazioni relative ai rischi di progetto individuati in seguito ad uno studio delle attivit\`a
+\item \textbf{Pianificazione attivit\`a di sviluppo}: contiene grafici e tabelle che illustrano i ruoli dei componenti durante le varie fasi
+\item \textbf{Conto economico preventivo}: contiene il preventivo economico determinato in seguito ad una analisi preventiva delle ore e dei costi
+\end{itemize}
+\subsubsection{Piano di Qualifica}
+Fornisce una descrizione degli strumenti, delle tecniche e delle metodologie necessarie per garantire un valido e corretto processo di sviluppo del sistema. Nello specifico il documento contiene le seguenti sezioni:
+\begin{itemize}
+\item \textbf{Strategie di verifica qualitativa}: descrive l'approccio adottato per stabilire il livello qualitativo del software prodotto
+\item \textbf{Pianificazione dello sviluppo software}: descrive il modello adottato per lo sviluppo del prodotto
+\item \textbf{Verifica qualitativa}: descrive nel dettaglio le propriet\`a che il prodotto deve possedere
+\item \textbf{Risorse disponibili per la verifica}: elenca le risorse umane disponibili per la fase verifica
+\item \textbf{Gestione amministrativa della revisione}: descrive gli strumenti e i metodi utilizzati per l'operazione di revisione
+\item \textbf{Tecniche di verifica}: elenca e descrive nel dettaglio le metodologie necessarie per verificare il prodotto
+\item \textbf{Misure e metriche}: descrive metodi per la misurazione quantitativa di parametri qualitativi del prodotto
+\item \textbf{Strumenti di verifica}: elenca gli strumenti utilizzati per la verifica illustrandone le modalit\`a d'uso
+\item \textbf{Verifica delle diverse fasi di progetto}: analizza ogni singola fase progettuale
+\item \textbf{Attivit\`a di test}: elenca i test di verifica divisi per categoria
+\item \textbf{Resoconto delle attivit\`a di verifica}: illustra con un resoconto finale gli elementi utilizzati 
+\end{itemize} 
+\subsubsection{Studio di Fattibilit\`a}
+Analizza le risorse necessarie per lo sviluppo dei capitolati presentati, indicando quale di essi risulta il pi\`u interessante e conveniente da approcciare. Analizza nello specifico uno ad uno i capitolati, evidenziandone punti a favore e punti contrari rispetto alla politica di preferenza e fattibilit\`a del gruppo.
+\subsubsection{Analisi dei Requisiti}
+Definisce i requisiti emersi dallo studio del capitolato tracciandone i vincoli e facendo emergere le funzionalit\`a del sistema. Nello specifico il documento contiene le seguenti sezioni:
+\begin{itemize}
+\item \textbf{Descrizione generale}: descrive il prodotto elencandone usi, vincoli, funzioni e caratteristiche
+\item \textbf{Casi d'uso}: elenca i casi d'uso suddividendoli per tipologia
+\item \textbf{Requisiti}: descrive i requisiti con elenco tabellare
+\item \textbf{Mappature}: descrive in modo tabellare i casi d'uso mettendoli in relazione con i requisiti di sistema
+\end{itemize}
+Ogni requisito viene classificato secondo una specifica nomenclatura illustrata nel capitolo ``Requisiti'' del documento ``\textit{analisi-dei-requisiti\_3.0.pdf}''.
+I requisiti devono essere semplici, chiari e privi di ogni ambiguit\`a. L'insieme dei requisiti viene organizzato in forma tabellare e ogni record specifica le seguenti propriet\`a:
+\begin{itemize}
+\item \textbf{ID}: identificativo alfanumerico per individuare in modo univoco il requisito
+\item \textbf{Descrizione}: breve descrizione testuale riferita allo scopo del requisito
+\item \textbf{Provenienza}: specifica l'origine del requisito
+\end{itemize}
+\begin{table}[h!]
+\begin{tabularx}{\textwidth}{XXX}
+ID & Descrizione & Provenienza \\
+\toprule
+... & ......... & ......... \\
+\midrule
+... & ......... & ......... \\
+\midrule
+\end{tabularx}
+\caption{Tabella dei requisiti}
+\end{table}
+\vspace{3 mm}
+Per la realizzazione dei diagrammi dei casi d'uso si adotta il linguaggio di modellazione \underline{UML} 2; ogni \underline{caso d'uso} viene elencato con una propria descrizione testuale e un diagramma. Se il caso d'uso \`e atomico non viene fornito il relativo diagramma. La descrizione testuale \`e composta dai seguenti punti:
+\begin{itemize}
+\item \textbf{Use Case}: identificazione univoca del caso d'uso. La numerazione indica la gerarchia per inclusione di appartenenza del caso d'uso
+\item \textbf{Attori principali}: identifica coloro che partecipano attivamente al caso d'uso
+\item \textbf{Attori secondari}: identifica coloro che partecipano passivamente al caso d'uso
+\item \textbf{Scopo e introduzione}: descrive brevemente il caso d'uso
+\item \textbf{Precondizioni}: identifica le condizioni sicuramente verificate all'inizio
+\item \textbf{Postcondizioni}: identifica le condizioni e gli effetti garantiti alla conclusione dello scenario principale del caso d'uso
+\item \textbf{Illustrazione scenari}: descrive lo scenario principale ed eventuali scenari alternativi
+\item \textbf{Estensioni} (opzionale): definisce il caso d'uso che estende il soggetto trattato, la condizione di estensione e l'extension point; queste informazioni pertanto non verranno inserite nel diagramma, anche per motivi di leggibilit\`a
+\end{itemize}
+Vengono evidenziati con colore giallo chiaro i caso d'uso, mentre con colore azzurrino le note relative al caso d'uso. Ogni caso d'uso viene inoltre mappato tramite un'apposita tabella per verificarne la corrispondenza con i requisiti. Ogni record ha:
+\begin{itemize}
+\item \textbf{Codice caso d'uso}: identificativo alfanumerico che consente di individuare il caso d'uso in modo univoco e di stabilire una gerarchia
+\item \textbf{Nome caso d'uso}: breve descrizione testuale del caso d'uso
+\item \textbf{Codice requisito}: identificativo univoco del requisito da cui deriva il caso d'uso
+\end{itemize}
+\begin{table}[h!]
+\begin{tabularx}{\textwidth}{XXX}
+Codice caso d'uso & Nome caso d'uso & Codice Requisito \\
+\toprule
+... & ......... & ......... \\
+\midrule
+... & ......... & ......... \\
+\midrule
+\end{tabularx}
+\caption{Tabella di mappatura casi d'uso/requisiti}
+\end{table}
+\vspace{3 mm}
+\begin{table}[h!]
+\begin{tabularx}{\textwidth}{XX}
+Codice requisito & Codice caso d'uso \\
+\toprule
+... & ......... \\
+\midrule
+... & ......... \\
+\midrule
+\end{tabularx}
+\caption{Tabella di mappatura requisiti/casi d'uso}
+\end{table}
+\vspace{3 mm}
+Con le tabelle precedenti, riportate in forma completa nel documento ``\textit{analisi-dei-requisiti}
+\textit{\_3.0.pdf}'', si evidenzia la relazione tra requisiti/casi d'uso e viceversa.
+\subsection{Progettazione architetturale e di dettaglio}
+Oltre alla modifica ed espansione dei documenti sopra descritti validi per la fase di Analisi, vengono introdotti due nuovi documenti denominati ``Specifica Tecnica'' e ``Definizione del Prodotto''.
+
+\subsubsection{Specifica Tecnica}
+Il documento \`e finalizzato alla descrizione dell'architettura che viene adottata per il sistema EQuery. Tale documento si riferisce alla fase di progettazione architetturale. Di seguito viene illustrato il contenuto del documento e le norme di riferimento:
+\begin{itemize}
+\item \textbf{Architettura generale del sistema}: descrive il pattern architetturale scelto
+\item \textbf{Componenti del sistema ad alto livello}: elenca le parti del sistema EQuery
+\item \textbf{Strumenti utilizzati per interfaccia grafica}: elenca gli strumenti utilizzati per la realizzazione dell'interfaccia grafica del sistema
+\item \textbf{Descrizione singoli componenti}: elenca in modo dettagliato con relativa descrizione i componenti del sistema
+\item \textbf{Diagrammi di sequenza}: elenca ed illustra i diagrammi di sequenza
+\item \textbf{Diagrammi delle classi}: elenca ed illustra i diagrammi delle classi
+\item \textbf{Diagrammi dei package}: elenca ed illustra i diagrammi dei package
+\item \textbf{Diagrammi attivit\`a}: elenca ed illustra i diagrammi di attivit\`a
+\item \textbf{Tracciamento}: descrive in modo tabellare la relazione tra componenti/requisiti e viceversa. Le tipologie di tabelle inserite sono le seguenti:
+\begin{table}[h!]
+\begin{tabularx}{\textwidth}{XX}
+Nome componente & Codice requisito \\
+\toprule
+..... & ........... \\
+\midrule
+..... & ........... \\
+\midrule
+\end{tabularx}
+\caption{Tabella di mappatura componenti/requisiti}
+\end{table}
+\vspace{3 mm}
+
+\begin{table}[h!]
+\begin{tabularx}{\textwidth}{XX}
+Codice requisito & Nome componente \\
+\toprule
+..... & ........... \\
+\midrule
+..... & ........... \\
+\midrule
+\end{tabularx}
+\caption{Tabella di mappatura requisiti/componenti}
+\end{table}
+\vspace{3 mm}
+\end{itemize}
+\subsubsection{Design Pattern}
+La scelta dei pattern deve avvenire in maniera coerente, accertandosi che non porti ad un eccessivo uso di risorse ma piuttosto ad un reale beneficio al progetto. I design pattern che vengono descritti nel documento ``\textit{specifica-tecnica\_2.0.pdf}'' vengono descritti con la seguente nomenclatura:
+\begin{itemize}
+\item \textbf{Nome del pattern}: indica il nome con il quale viene identificato il pattern
+\item \textbf{Scopo}: spiega lo scopo del pattern, analizzando il  miglioramento apportato al sistema
+\item \textbf{Motivazione}: fornisce le motivazioni per cui il gruppo ha deciso di adottare il pattern
+\item \textbf{Applicabilit\`a}: descrive in quali contesti generali il pattern \`e applicato
+\item \textbf{Struttura}: descrive in modo testuale e grafico il pattern
+\item \textbf{Conseguenze}: elenca aspetti positivi e negativi derivanti dall'utilizzo del pattern
+\end{itemize}
+L'ordine con il quale ogni \underline{design pattern} viene presentato dipende dal contesto di inserimento nel documento, cercando tuttavia di seguire un ordine logico ben definito:
+\begin{itemize}
+\item descrizione problema
+\item descrizione design pattern scelto per risolvere il problema (contenente tutti i punti sopra citati)
+\item utilizzo nel progetto EQuery
+\end{itemize}
+
+\subsubsection{Diagrammi}
+Durante la fase di Progettazione vengono utilizzati i seguenti diagrammi seguendo per prassi le regole di UML 2.0:
+\begin{itemize}
+\item \textbf{delle classi}: individuano e descrivono gli elementi che compongono il sistema, indicandone le relazioni e le propriet\`a. Il nome della classe \`e in grassetto (parte obbligatoria), attributi e operazioni sono indicati e descritti in ordine di visibilit\`a (da private a public). Per quanto riguarda le associazioni e le caratteristiche strutturali degli attributi, sono seguite le linee guida riportate sulle slide del corso (vedi riferimenti informativi). In particolare, l'associazione deve essere unidirezionale, rappresentata con una linea continua e orientata, etichettata con un sostantivo. Ogni attributo \`e descritto con la sua visibilit\`a e il proprio tipo. Possono essere presenti commenti su attributi e operazioni, indicati con un rettangolo collegato tramite linea tratteggiata all'elemento che descrivono. Le interfacce sono indicate tra doppie parentesi angolate, le classi astratte in corsivo. Per tutte le altre caratteristiche evidenziate nel diagramma (generalizzazioni, dipendenze, ecc) si rimanda alle slide del corso.
+Per ogni classe vengono analizzati e descritti i seguenti punti:
+\begin{enumerate}
+\item \textbf{Funzione del componente}: individua la funzione all'interno del sistema
+\item \textbf{Relazione d'uso di altre componenti}: elenca e descrive le relazioni con altre componenti del sistema. Per scelta vengono trattate solo le relazioni verso altre componenti, e non da altre componenti; in modo da evitare relazioni ridondanti. Per convenzione, se non ci sono relazioni, viene semplicemente scritto ``nessuna''  
+\item \textbf{Attivit\`a svolte e dati trattati}: descrive nello specifico le azioni svolte dal componente
+\end{enumerate}
+\item \textbf{dei package}: rappresentano un raggruppamento di classi. L'opportuna suddivisione delle classi e l'attribuzione dei diversi \underline{package} ad altrettanti programmatori permette lo sviluppo simultaneo delle classi evitando problemi di interferenza. Le dipendenze tra classi di uno stesso package sono indicate tramite linea orientata tratteggiata, non ci possono essere dipendenze ricorsive. Per ogni package viene inserita una descrizione testuale che mette in evidenza i sotto-package e le relazioni del package con altri package, specificandone la classe con cui avviene tale relazione
+\item \textbf{di sequenza}: rappresentano le successioni temporali e le interazioni tra oggetti. Descrivono gli scenari in termini di scambio di messaggi tra attori e entit\`a. Uno scenario \`e una determinata sequenza di azioni in cui tutte le scelte sono gi\`a state effettuate; nel diagramma non compaiono scelte, n\'e flussi alternativi. Per ogni diagramma di sequenza vengono specificati due diagrammi, uno ad alto livello e uno a basso livello. Nel diagramma a basso livello viene introdotta un'ulteriore descrizione
+\item \textbf{di attivit\`a}: servono per gestire attivit\`a complesse e diverse fra di loro che prevedono l'interazione di pi\`u attori, separati da corsie verticali. Le attivit\`a poste sulla stessa linea sono eseguibili in mutua esclusione 
+\end{itemize} 
+Per ogni diagramma di sequenza e per ogni diagramma di attivit\`a vengono specificate le seguenti informazioni:
+\begin{enumerate}
+\item \textbf{Precondizione}: descrive lo stato del sistema o del componente alla fase di partenza
+\item \textbf{Postcondizione}: descrive lo stato del sistema o del componente al termine della sequenza di attivit\`a svolte
+\item \textbf{Descrizione}: specifica la sequenza delle attivit\`a
+\end{enumerate}
+\subsubsection{Descrizione componenti} 
+Per convenzione il gruppo ha stabilito che all'interno dei diagrammi illustrati in precedenza gli elementi hanno i seguenti colori:
+\begin{itemize}
+\item colore grigio per le classi
+\item colore giallo per i package
+\item colore arancio per i sotto-package
+\item colore azzurro per le note
+\end{itemize}
+Per ciascun diagramma sopra illustrato viene fornita inoltre una descrizione testuale del suo significato. In questa sezione viene analizzato lo stato delle classi, l'organizzazione dei \underline{package} e il comportamento dinamico del sistema. Grazie allo strumento messo a disposizione dal software BOUML viene generata in modo automatico la documentazione HTML per facilitare la visualizzazione dei diagrammi.  
+
+\subsubsection{Definizione del Prodotto}
+Il documento descrive gli standard di progettazione architetturale, gli standard di programmazione e gli standard riguardanti la documentazione del codice, includendo anche gli aspetti relativi alle relazioni e alle entit\`a. Il documento fa riferimento alla progettazione di dettaglio e utilizza gli elementi visti in precedenza. In questa fase vengono riproposti i diagrammi presentati nel documento ``\textit{specifica-tecnica\_2.0.pdf}'', ma con un grado di dettaglio maggiore. In particolar modo vengono indicati tutti gli attributi e le operazioni offerte da ogni classe. Di conseguenza la classificazione vista in precedenza nel documento ``\textit{specifica-tecnica\_2.0.pdf}'' inerente ai diagrammi delle classi viene ampliata con le seguenti voci: 
+\begin{itemize}
+\item \textbf{Attributi}: elenca gli attributi
+\item \textbf{Operazioni}: elenca le funzionalit\`a messe a disposizione dal sistema
+\end{itemize}
+\subsection{Codifica}
+Questa fase \`e dedicata alla stesura del codice e alla scrittura del documento denominato ``\textit{manuale-utente\_1.0.pdf}'' che illustra le funzionalit\`a dell'applicativo all'utente finale.
+
+\subsubsection{Norme generiche di codifica}
+Per facilitare la verificabilit\`a, massimizzare la portabilit\`a e rendere il software manutenibile nel tempo, si deve scrivere codice pi\`u leggibile possibile. Il codice deve rispettare la seguente nomenclatura:
+\begin{itemize}
+\item tutti i nomi devono essere univoci e riflettere il contenuto dell'elemento
+\item tutti i nomi di classe devono iniziare con lettera maiuscola
+\item i nomi delle classi e dei metodi devono essere scritti in lingua inglese
+\item tutti i nomi dei package e delle classi devono essere scritti in corsivo, eccetto nelle tabelle di mappatura del documento ``\textit{specifica-tecnica\_2.0.pdf}``
+\item tutti i nomi di variabili costanti dovranno essere in maiuscolo senza spazi
+\item si deve cercare di abbreviare il pi\`u possibile i nomi
+\end{itemize}
+Il codice deve seguire il pi\`u possibile le seguenti regole:
+\begin{itemize}
+\item compilare da subito il codice elaborato, limitando il pi\`u possibile le condizioni di compilazione
+\item non usare allocazione dinamica di memoria dopo l'inizializzazione
+\item utilizzare i commenti in modo da rendere pi\`u comprensibile il codice senza per\`o appesantirlo (soltanto i metodi pi\`u complessi saranno commentati con una breve descrizione)
+\item ogni struttura di controllo deve avere condizioni di uscita opportunamente identificate prediligendo la semplicit\`a e l'efficienza in modo da garantire un corretto livello di coverage
+\item usare costrutti di controllo del flusso pi\`u semplici possibile (vedi ad esempio ``go-to'')
+\item utilizzare preferibilmente iterazioni con limite superiore statico (cicli ``for'' piuttosto che cicli ``while'')
+\item evitare costrutti ricorsivi (comportano un alto rischio di saturazione della memoria)
+%\item limitare il pi\`u possibile l'utilizzo di puntatori, restringendo i livelli di dereferenziazione
+\item definire precondizione e postcondizione  di ogni metodo
+\item tramite l'utilizzo di asserzioni controllare i parametri in ingresso e uscita per valutare la loro consistenza
+\item evitare di scrivere linee di codice pi\`u lunghe di 80 caratteri
+\item scrivere sotto-programmi brevi in modo da non superare le 60 linee di codice
+\item ogni file contenente codice deve includere un'intestazione di questo tipo:\\
+\\/*
+\\``nome progetto'' - ``nome file''
+\\Creation Date: ``data di creazione''
+\\Author: ``nome del programmatore''
+\\Last modify: ``data ultima modifica''
+\\Version: ``versione del file''
+\\Description: ``breve descrizione dello scopo del documento''
+\\**/
+\end{itemize}
+Ogni programmatore deve consegnare codice in grado di compilare (senza ``warning'') e correttamente eseguibile.
+\subsubsection{Norme Java}
+\`E stato scelto l'ambiente di sviluppo Eclipse poich\'e supporta la progettazione in Java e rende disponibile l'interfacciamento ad altri linguaggi grazie a diversi \underline{plugin}. Ogni programmatore dovr\`a seguire la Java Code Convention il cui sito di riferimento \`e: \begin{center}
+\url{http://www.oracle.com/technetwork/java/codeconvtoc-136057.html}.
+\end{center}
+Ogni file sorgente Java deve avere estensione ``.java'', mentre ogni file in \underline{Bytecode} ha estensione ``.class''.
+\subsubsection{Norme HTML}
+Dato il requisito di sviluppare l'interfaccia grafica utilizzando il linguaggio di \underline{markup} HTML, specifichiamo alcune regole da seguire:
+\begin{itemize}
+\item tutti i tag aperti devono essere chiusi nel giusto ordine; ossia inverso rispetto all'ordine di apertura  
+\item la sezione ``head'' deve essere correttamente definita in ogni sua parte
+%\item includere l'intera pagina in un ``div'' globale in modo da avere maggior controllo sulla visualizzazione della pagina
+\item usare i tag ``h1'', ``h1'', ``h3'', ecc nel corretto ordine in modo da valorizzare il documento dando ad ogni sezione la giusta importanza
+\item indentare le parti di codice servendosi della struttura gerarchica dei tag
+\item mantenere il codice relativo alla scelta dello stile nel file CSS staccato quindi dal file HTML
+%\item definire sempre il DTD Document Type Definition, \`e una parte fondamentale nel sito infatti non solo permette di essere validato ma permette anche al browser di interpretare correttamente il codice
+\end{itemize}
+Ogni pagina deve essere validata sul sito del W3C in modo da verificare che rispetti tutti gli standard. Il sito per la verifica \`e:
+\begin{center}
+\url{http://validator.w3.org/#validate_by_uri}
+\end{center}
+\subsubsection{Norme XML}
+Vengono elencate di seguito alcune regole da seguire per scrivere un buon codice XML:
+\begin{itemize}
+\item il documento XML deve avere un unico tag di apertura e di chiusura (solitamente chiamato root) che contiene l'intero documento
+\item tutti gli altri tag devono essere opportunamente innestati
+\item ogni tag aperto deve avere il corrispettivo tag di chiusura
+\item i tag sono case sensitive
+\item il valore degli attributi deve essere sempre racchiuso tra virgolette
+\end{itemize}
+Infine tutto il codice XML deve essere validato nei seguenti siti:
+\begin{itemize}
+\item \textbf{XML Validator} (validazione codice XML)
+\begin{center}
+\url{http://www.validome.org/xml/}
+\end{center}
+\item \textbf{XML Schema Validator} (validazione per XML Schema)
+\begin{center}
+\url{http://tools.decisionsoft.com/schemaValidate/}
+\end{center}
+\end{itemize}
+
+\subsubsection{Norme CSS}
+Per una miglior codifica del codice CSS che definisce lo stile dell'applicazone \`e necessario seguire il pi\`u possibile le seguenti regole:
+\begin{itemize}
+\item utilizzare i commenti per facilitare la comprensione del codice
+\item ordinare il foglio di stile per aree. Ad esempio si possono mettere all'inizio tutte le regole generiche, successivamente la testata, il corpo della pagina, la chiusura di pagina e le classi personalizzate. In questo modo si facilitano le operazioni di modifica soprattutto nei casi in cui il listato del codice sia molto lungo
+\item indentare il codice il pi\`u possibile in modo da agevolare la ricerca degli errori
+\item ordinare alfabeticamente le propriet\`a di ogni attributo in modo da garantire una miglior leggibilit\`a del documento
+\end{itemize}
+Come descritto nella sezione ``Norme HTML'' anche il codice CSS viene validato sul sito del W3C.
+\subsubsection{Norme JavaScript}
+\`E buona norma di codifica, quando il codice JavaScript \`e molto lungo e complesso, indentare il codice secondo le strutture e le appartenenze:
+\begin{itemize}
+\item allineare il codice in base al flusso e alle strutture del linguaggio come blocchi o istruzioni di controllo
+\item le parentesi graffe vanno riportate a capo, all'apertura e alla chiusura del blocco di istruzioni
+\end{itemize}
+\subsubsection{Codifica testi}
+Nella fase di realizzazione delle pagine web tutti i contenuti testuali adottano la codifica UTF-8 definita nello standard ISO 8859-1. Questa codifica consente una corretta visualizzazione dei contenuti testuali, anche nel caso la pagina web sia visualizzata da utenti di altri paesi europei.
+
+\subsubsection{Manuale Utente}
+Il documento ha lo scopo di illustrare nel dettaglio le funzionalit\`a del prodotto finale realizzato dal team LOOP. Vengono elencati e descritti tutti i comandi a disposizione dell'utente grazie anche all'utilizzo di figure e schermate di esempio. Infine viene presentato un elenco dei possibili errori del software EQuery con relativa spiegazione per la risoluzione del problema. Nello specifico il documento contiene le seguenti sezioni:
+\begin{itemize}
+\item \textbf{Introduzione}: introduce genericamente all'utente il manuale e eventuali altri documenti
+\item \textbf{Descrizione generale}: descrive in modo generale il prodotto e le sue caratteristiche 
+\item \textbf{Istruzioni per l'uso}: elenca nello specifico le funzionalit\`a del prodotto e le possibili cause di errore 
+\end{itemize} 
+
+\subsection{Verifica e Validazione}
+Nel ``\textit{piano-di-qualifica\_3.0.pdf}'', per ogni fase di sviluppo di progetto, viene in sintesi riportata l'attivit\`a di verifica. In fase di progettazione, i verificatori controllano che i diagrammi prodotti seguano le norme di stesura concordate e definite dal linguaggio UML 2.0. Per la verifica del codice vengono invece elencate le classi sottoposte ai test e lo strumento utilizzato per effettuarli, nonch\'e l'esito. Rimandiamo al capitolo ``Attivit\`a di verifica'' per una spiegazione pi\`u dettagliata.
+\\
+Per la validazione del prodotto EQuery vengono verificati uno ad uno i requisiti obbligatori definiti nell'attivit\`a di analisi, descritta nel documento ``\textit{piano-di-qualifica\_3.0.pdf}''.
+La stessa procedura di validazione viene eseguita anche sui requisiti desiderabili e opzionali se e solo se sono completamente implementati e funzionali.
+\newpage
+\section{Documenti}
+In questa sezione si presentano gli standard adottati dal team LOOP per redigere la documentazione derivante dall'attivit\`a di progetto.
+\subsection{Composizione}
+Ogni documento \`e realizzato utilizzando il linguaggio di \underline{markup} \LaTeX , in quanto permette di concentrarsi sul contenuto del documento piuttosto che sull'aspetto: una volta impostato il modello \`e compito del linguaggio ricreare il \underline{design} del documento. Tutti i documenti, per le consegne relative ad ogni revisione, devono avere estensione ``.tex''. I file relativi ai documenti con estensione ``.tex'' devono essere compilati in formato pdf e devono tutti avere estensione ``.pdf''.\\
+Il nome di ogni documento segue questo formato: ``\textit{nome-del-documento\_ver.est}''; per ``est'' si intende il tipo di estensione (descritte in precedenza) mentre per ``ver'' si intende un valore numerico che definisce la versione del documento. 
+\subsection{Template}
+Ogni documento viene creato utilizzando un \underline{template} \LaTeX  presente nel \underline{repository} raggiungibile all'indirizzo:
+\begin{center}
+\url{https://www.dropbox.com/home#/Repository/Template%20LaTeX:::82944465}
+\end{center}
+Questo template ha lo scopo di dare un'impostazione globale unificata a tutti i documenti. Ogni componente del team pu\`o richiedere una modifica di questo template direttamente al Responsabile di progetto. Quest'ultimo ha la possibilit\`a di respingere questa richiesta (motivando quest'azione) o accettarla cambiando il template.
+\subsection{Contenuto}
+Ogni documento deve contenere:
+\begin{itemize}
+\item pagina iniziale con titolo, logo, informazioni del documento
+\item pagina vuota
+\item registro delle modifiche
+\item indice del documento
+\item indice tabelle (se presenti)
+\item indice figure (se presenti)
+\item sommario
+\item introduzione (Scopo del documento, Scopo del prodotto, Glossario, Riferimenti)
+\item contatto del gruppo
+\end{itemize}
+Nello specifico le informazioni del documento contengono: 
+\begin{itemize}
+\item nome documento
+\item versione
+\item stato
+\item uso
+\item data creazione
+\item data ultima modifica
+\item redazione
+\item approvazione
+\item verifica
+\item Committente
+\item lista di distribuzione
+\end{itemize}
+\subsection{Figure e tabelle}
+Se all'interno del documento sono presenti figure, tabelle o grafici, \`e necessario per ciascuno di essi introdurre una didascalia che spiega ci\`o che l'elemento raffigura. Ogni tabella presente all'interno dei documenti non deve contenere linee verticali di delimitazione tra una colonna e l'altra. Le tabelle e le figure, oltre ad avere una numerazione progressiva, vengono elencate in un'apposita sezione successiva all'indice del documento.
+Le immagini relative ad un documento sono inserite  nella cartella di quest'ultimo, oltre ad essere salvate in una cartella comune denominata ``Immagini'' contenuta nel \underline{Repository}.
+\subsection{Norme tipografiche}
+\begin{itemize}
+\item Carattere: per la stesura dei documenti il font utilizzato e la dimensione dei paragrafi \`e quella standard di \LaTeX; la dimensione del testo \`e di 11pt
+\item Grassetto: utilizzato nel capitolo ``Introduzione'' facendo riferimento alla parola EQuery, e nei documenti in generale (ad esempio su alcuni elenchi puntati) per evidenziare termini di maggior importanza 
+\item Sottolineatura: si deve utilizzare per marcare le parole inserite nel glossario. Le parole vengono sottolineate ogni volta che compaiono all'interno di un documento
+\item Acronimi: sono scritti con tutti i caratteri in maiuscolo
+\item Collegamenti: sono segnalati con un link di colore blu
+\item Corsivo: tutti i nomi delle classi e dei package vengono scritti in corsivo; i riferimenti alla documentazione vengono scritti in corsivo e racchiusi tra virgolette
+\item Citazioni: vengono descritte tra parentesi quadre con la seguente dicitura ``[cit.]''
+\item Elenchi puntati: le frasi contenute negli elenchi puntati non contengono punteggiatura di chiusura
+\item Capitolazione: ogni nuovo capitolo deve iniziare in una nuova pagina
+\item Ruoli: tutti i nomi propri relativi alla tipologia del ruolo vengono scritti con la lettera iniziale in maiuscolo (Responsabile, Amministratore, Committente, ecc)
+\item Fasi: tutti i nomi propri che si riferiscono alle fasi progettuali vengono scritti con la lettera maiuscola. La lettera maiuscola \`e utilizzata per tutte le parole che contengono il nome proprio, fatta eccezione per le preposizioni
+\item Date: tutte le date vengono scritte con il formato ``GG/MM/AAAA'', eccezion fatta per la pagina iniziale che segue il formato ``GG'' Mese ``AAAA''.
+\end{itemize}
+Per qualsiasi dubbio di tipo ortografico, lessicale o sintattico si \`e fatto riferimento al Dizionario Italiano il cui sito \`e:
+\begin{center}
+\url{http://www.dizionario-italiano.it/}
+\end{center}
+
+
+\subsection{Norme di stile}
+Nel frontespizio di ogni documento deve essere riportata la data di consegna dello stesso. Ogni pagina presente all'interno del documento \`e composta da un'intestazione e un pi\`e di pagina. Nell'intestazione viene inserito il logo in forma testuale del team e il riferimento al capitolo del documento in cui la pagina si trova. Nel pi\`e di pagina, invece, viene inserita la mail del gruppo, il riferimento al progetto universitario e il numero della pagina.
+\subsection{Registro delle modifiche}
+Per agevolare la comprensione e tracciare uno storico delle modifiche effettuate, ogni documento contiene una sezione dedicata al registro delle modifiche (dopo la prima pagina e prima dell'indice). All'interno di questa sezione una tabella contiene le seguenti informazioni:
+\begin{itemize}
+\item numero della versione (in ordine decrescente)
+\item autore della modifica
+\item data di modifica del documento
+\item breve descrizione del cambiamento
+\end{itemize}
+Le date di creazione e di ultima modifica presenti nella pagina iniziale del documento devono essere le medesime di quelle inserite nel registro delle modifiche.
+La data di creazione deve corrispondere a quella del primo record della tabella partendo dal fondo, mentre quella di ultima modifica corrisponde alla data inserita nell'ultimo record della tabella.  
+
+\subsection{Versionamento}
+La versione \`e un attributo che indica lo stato del documento o una \underline{release} del software. Questa \`e strutturata nel seguente modo:
+\begin{center}
+\textbf{v(X).(Y).(Z)}
+\end{center}
+il significato nel caso di documenti \`e:
+\begin{itemize}
+\item \textbf{X}: intero che indica una release principale del documento, che generalmente coincide con la sua presentazione ad una revisione formale
+\item \textbf{Y}: intero che indica una modifica del documento
+\item \textbf{Z}: intero che indica una correzione del documento
+\end{itemize}
+il significato nel caso di software \`e:
+\begin{itemize}
+\item \textbf{X}: intero che indica una release di tipo evolutivo
+\item \textbf{Y}: intero che indica una sotto-release incrementale  
+\item \textbf{Z}: intero  che indica una release correttiva 
+\end{itemize}
+\subsection{Abbreviazioni}
+Le revisioni sono cos\`i abbreviate:
+\begin{itemize}
+\item RR: Revisione dei Requisiti
+\item RP: Revisione di Progettazione
+\item RQ: Revisione di Qualifica
+\item RA: Revisione di Accettazione
+\end{itemize}
+I documenti sono cos\`i abbreviati:
+\begin{itemize}
+\item AR: Analisi dei Requisiti
+\item PP: Piano di Progetto
+\item SF: Studio di Fattibilit\`a
+\item PQ: Piano di Qualifica
+\item ST: Specifica Tecnica
+\item DP: Definizione del Prodotto
+\item MU: Manuale Utente
+\end{itemize}
+\subsection{Norme del Glossario}
+Si \`e preferito allegare un documento esterno specifico per il Glossario, in modo da evitare ridondanza nelle definizioni dei termini tra i vari documenti. Per la stesura del Glossario sono state seguite delle semplici norme elencate di seguito:
+\begin{itemize}
+\item spiegazioni chiare e sintetiche
+\item termini disposti in ordine alfabetico
+\item deve contenere solo ci\`o che \`e necessario e non spiegazioni superflue o ridondanti
+\end{itemize}
+
+\newpage
+\section{Attivit\`a di verifica}
+\subsection{Documentazione}
+ \`E compito del Verificatore segnalare eventuali errori al Redattore della documentazione in esame, il quale deve provvedere a correggere tali errori e ripresentare la documentazione per un'ulteriore attivit\`a di verifica ed eventuale validazione.
+\\
+Le fasi che un documento attraversa prima della sua convalida sono le seguenti:
+\begin{itemize}
+\item Redazione: il documento viene scritto dal Redattore il quale deve segnalare le modifiche e le aggiunte apportate durante la stesura dello stesso, in modo da rendere mirata agli ultimi aggiornamenti l'attivit\`a di verifica parziale
+\item Verifica: i Verificatori controllano la correttezza del documento. Eventuali errori o imperfezioni vengono segnalate al Redattore che provveder\`a alla correzione
+\item Convalida: il Responsabile procede con l'eventuale validazione della documentazione fornitagli dai Verificatori e provvede a trasmetterla al Committente
+\end{itemize}
+Per quanto riguarda errori di tipo grammaticale vengono effettuati i seguenti controlli sulla documentazione:
+\begin{itemize}
+\item Controllo ortografico: verifica la correttezza delle singole parole
+\item Controllo grammaticale: verifica la correttezza del costrutto della frase
+\item Chiarezza espositiva e lessicale: verifica la correttezza della terminologia utilizzata
+\item Correttezza e completezza dei contenuti: verifica la pertinenza e il valore del contenuto
+\item Controllo di tabelle ed immagini: coerenza dei dati di ciascuna tabella (anche in relazione con altre tabelle) e verifica delle didascalie relative
+\item Controllo che tutta la documentazione sia redatta secondo la formattazione specificata in questo documento 
+\end{itemize}
+
+\subsection{Diagrammi e grafici}
+Tutti i diagrammi devono seguire lo standard definito da \underline{UML} 2.0. Nel caso in cui dovesse servire un diagramma o un grafico non rappresentabile in UML 2.0, \`e compito del Redattore del documento affiancargli una legenda e una lista dei contenuti ambigui. Maggiori norme specifiche sui diagrammi utilizzati sono descritte nella sezione ``Norme di sviluppo''.
+
+\subsection{Architettura del sistema}
+Vengono presi in considerazione i diagrammi dei package e delle classi; si controlla che all'interno dello stesso package ci siano classi funzionalmente coese. Vengono poi controllati i gradi di utilit\`a, ovvero che tutte le classi siano utilizzate e anche le loro componenti. Per quanto riguarda l'accoppiamento, si controlla il livello di dipendenza.  Il grado di utilit\`a deve essere massimizzato, quello di accoppiamento minimizzato. Le metriche utilizzate per queste misurazioni vengono descritte dettagliatamente nel documento \textit{``piano-di-qualifica\_3.0''}.
+  
+\subsection{Codice}
+Vengono utilizzati gli strumenti idonei per eseguire analisi statica sul codice prodotto quali FindBugs e gli strumenti di debugging messi a disposizione da Eclipse, oltre a plugin come Metrics, JUnit.
+Per quanto riguarda l'attinenza alle regole di codifica Java, il Verificatore controller\`a che le norme siano state seguite.\\
+In particolare verifica:
+\begin{itemize}
+\item nomi dei file
+\item nomenclatura delle classi, variabili e metodi
+\item formattazione dei commenti
+\item tabulazioni e lunghezze delle righe
+\item intestazione del file
+\end{itemize}
+Per ogni ciclo vengono analizzati i diversi tipi di cammini e verificata la correttezza della condizione grazie ad una tabella di verit\`a in modo da garantire un buon livello di \underline{coverage}.
+Vengono inoltre utilizzati programmi come EclEmma per verificare il livello di copertura del codice.\\
+\\
+Tutto il codice HTML, XML, JavaScript e CSS, oltre ad essere validato attraverso gli appositi siti elencati in precedenza, viene testato utilizzando il plugin Speed Tracer integrabile in Google Chrome o Eclipse, per verificare la velocit\`a di caricamento della pagina.
+
+\subsection{Test}
+In questa sezione vengono elencati i test eseguiti sul prodotto EQuery.
+\subsubsection{Test di accettazione e sistema }
+Test di sistema e accettazione verificano il soddisfacimento o meno dei requisiti software e utente. Ogni test viene elencato nella seguente forma tabellare:\\
+\begin{table}[h!]
+\begin{tabularx}{\textwidth}{XXXX}
+ID Requisito & ID Verifica & Modalit\`a Verifica & Stato\\
+\toprule
+... & ... & ......... & ......... \\
+\midrule
+... & ... & ......... & ......... \\
+\midrule
+\end{tabularx}
+\caption{Tabella dei test di sistema e accettazione}
+\end{table}
+\vspace{3 mm}\\
+\subsubsection{Test di Unit\`a}
+Ogni descrizione di test di unit\`a deve presentare quattro elementi fondamentali:
+\begin{itemize}
+\item \textbf{oggetto}: rappresenta l'oggetto su cui viene effettuato il test
+\item \textbf{strategia}: descrive la strategia generale che il test segue
+\item \textbf{risorse necessarie}: elenco delle risorse che permettono al test di essere eseguito correttamente
+\item \textbf{piano di esecuzione}: descrive quali passi il test deve seguire per verificare correttamente l'unit\`a
+\end{itemize}
+\subsubsection{Test di integrazione}
+I test di integrazione devono riportare quanto segue:
+\begin{itemize}
+\item \textbf{ID}: identifica in modo univoco il test
+\item \textbf{componenti}: elenca le componenti da testare
+\item \textbf{Modalit\`a}: indica la modalit\`a di verifica del test
+\item \textbf{Tipo}: indica la categoria del test (white-box o black-box)
+\end{itemize}
+\subsubsection{Test di Regressione}
+I test di regressione devono indicare:
+\begin{itemize}
+\item \textbf{causa}: indica il motivo per cui si \`e deciso di effettuare il test
+\item \textbf{ripetizione}: indica quali tipi di test sono stati ripetuti
+\end{itemize}
+
+\subsubsection{Norme generiche}
+Ogni tipologia di test deve riportare un rapporto (tabellare, grafico o descrittivo) dei risultati ottenuti in modo da avere un riscontro visivo per valutare la maturit\`a del prodotto. Si andr\`a ad analizzare:
+\begin{itemize}
+\item miglioramento del prodotto in seguito alle prove
+\item diminuzione della densit\`a dei difetti
+\item costo nell'individuare il prossimo difetto
+\end{itemize}
+Nel documento ``\textit{piano-di-qualifica\_v3.0.pdf}'' vengono riportati in modo tabulare e cronologico i test effettuati evidenziano i seguenti aspetti:
+\begin{itemize}
+\item ambiente di testing
+\item classi testate
+\item esiti emersi
+\item errori individuati
+\end{itemize}
+\newpage
+\subsection{Strumenti di verifica}
+Nella fase di Codifica e di Verifica, il gruppo LOOP utilizza alcuni software per eseguire i propri test e verifiche in maniera automatica. Tali strumenti devono essere correttamente ed ugualmente configurati in tutti i computer utilizzati per l'attivit\`a di verifica ed ogni membro del gruppo deve conoscere il loro utilizzo. \`E compito di Programmatori e Verificatori effettuare le verifiche con i sotto elencati strumenti.
+
+\subsubsection{Eclipse 3.7 Indigo}
+L'utilizzo di questo \underline{framework} permette ai Programmatori di ottimizzare l'attivit\`a di codifica individuando gi\`a in fase di scrittura errori sintattici; 
+tali errori vengono inoltre motivati e viene suggerita una lista di operazioni di correzione. 
+Inoltre aiuta il compito di individuare sezioni di codice potenzialmente pericolose o inutili evidenziandole. \`E compito del programmatore verificare che il programma
+non rilevi alcun difetto di programmazione tra quelli elencati nella sezione ``Progettazione di Dettaglio e Codifica'' nel paragrafo ``Verifica delle diverse fasi di progetto''.
+Grazie ad una programmazione intelligente, l'inclusione di librerie o \underline{package} esterni viene gestita direttamente dal programma, diminuendo i tempi di codifica.
+Permette inoltre la compilazione e l'individuazione di errori logici non individuati precedentemente, come per esempio la gestione delle eccezioni.
+Tramite la sezione di ``\underline{package} Explorer'' viene fornita una visione della struttura logica del sistema: partendo dal progetto generale \`e possibile individuare ogni singolo attributo o metodo di ogni classe.
+Per velocizzare ulteriormente l'attivit\`a, Eclipse offre un sistema di suggerimenti automatici sugli oggetti inseriti: ogni volta che viene richiesto un particolare
+ campo (sia esso attributo, metodo o altro) vengono suggerite tutte le opzioni disponibili a quell'oggetto.
+
+\subsubsection{Eclipse Metrics Plugin 1.3.6}
+Questo strumento offre una grandissima variet\`a di misurazioni automatiche. Tutte le metriche sopra descritte sono analizzate a tempo di codifica da Eclipse Metrics Plugin che evidenzia in rosso eventuali valori non accettabili: \`e compito del Programmatore consegnare codice che rispetta tutti i valori decisi: nel caso in cui qualche misurazione rilevasse errori, lo stesso strumento offre la possibilit\`a di identificare \underline{package}, classe e metodo responsabili. Si usano inoltre due interessanti funzioni aggiuntive offerte dal plugin: l'e-strazione dei risultati in un file \underline{XML} e la rappresentazione grafica delle dipendenze del progetto. La prima viene utilizzata per tenere giornalmente traccia dei risultati ottenuti e fornisce i dati utili alla rappresentazione finale della curva di problemi riscontrati; la rap-presentazione grafica serve ad analizzare ``visivamente'' lo stato di dipendenze del sistema: un grado di complessit\`a troppo elevato rende il grafico totalmente illeggibile e richiede una nuova progettazione. 
+
+\newpage
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.7]{dipendenze.png}
+\end{center}
+\caption{Esempio di grafo di dipendenza dei package}
+\end{figure}
+
+
+\subsubsection{FindBugs 2.0} 
+Si \`e deciso di utilizzare il plugin di Eclipse invece del software stesso per ridurre il numero di programmi utilizzati mantenendo comunque le caratteristiche di qualit\`a desiderate. \`E compito del Programmatore consegnare codice che non possieda bug. Questo strumento permette di individuare le righe di codice, non necessariamente sbagliate, che possiedono bug: tramite una descrizione testuale dell'errore ed a una serie di parametri generati automaticamente, viene descritto il bug permettendone una pi\`u rapida gestione. I parametri che FindBugs utilizza sono:
+\begin{itemize}
+\item \textbf{Bug}: identifica il tipo di errore segnalato fornendo al programmatore ulteriori informazioni per la risoluzione del problema
+\item \textbf{Confidence}: restituisce una stringa che descrive il grado di fiducia (High, Medium, Low, Ignore)
+\item \textbf{Rank}: indice compreso nell'intervallo [1;20] e suddiviso in quattro categorie: 
+\begin{itemize}
+\item scariest [1;4]
+\item scary [5;9]
+\item troubling [10;14] 
+\item of concern [15;20]
+\end{itemize} 
+Pi\`u alto \`e l'indice, meno pericoloso \`e il bug trovato; questa valutazione permette di individuare la priorit\`a di correzione del bug
+\item \textbf{Pattern}: descrive a quale categoria d'errore appartiene il bug trovato
+\item \textbf{Type}: sigla di identificazione del bug trovato. La lista di sigle possibili \`e raggiungibile all'indirizzo \url{http://findbugs.sourceforge.net/bugDescriptions.html}
+\item \textbf{Category}: identifica a quale categoria appartiene il bug rilevato (correctness bug, bad practice, dodgy code). Di maggior rilievo sono i bug riferiti a 
+cattive norme di codifica (bad practice) o segmenti di codice scritti in maniera ambigua (dodgy code)
+\end{itemize}
+Lo strumento adottato, tuttavia, fornisce alcuni risultati da considerare falsi positivi: in tal caso, il Programmatore deve motivare la scelta di non correggere il bug segnalato. 
+Con l'attivazione automatica di FindBugs la verifica di presenza di bug viene effettuata ad ogni modifica di classi interne al progetto.
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.65]{findbugs.png}
+\end{center}
+\caption{Esempio rapporto generato con FindBugs}
+\end{figure}
+
+\subsubsection{JFeature 1.2}
+
+Tramite questo strumento i verificatori possono verificare la copertura dei requisiti funzionali di progetto. Dopo aver importato la lista dei requisiti precedentemente creata su file XML, 
+\`e necessario associare ad ognuno di essi i metodi creati per verificarli. Tramite lo strumento JUnit \`e possibile eseguire il test e, in caso di buona riuscita, verificare la copertura
+dei requisiti di cui sopra. Il rapporto generato da JFeature permette al programmatore di vedere alcune statistiche riguardo la serie di test appena svolta:
+\begin{itemize}
+\item \textbf{copertura categoria}: indica la percentuale di copertura delle categorie di requisiti indicata
+\item \textbf{copertura requisiti}: indica la percentuale di copertura sui requisiti
+\item \textbf{numero di requisiti}: indica il numero di requisiti per cui \`e stato effettuato il test
+\item \textbf{numero metodi di test}: indica quanti metodi sono stati usati per effettuare il test 
+\item \textbf{numero metodi di test mancanti}: indica il numero di metodi selezionati per verificare un requisito ma che non sono stati usati; se quest'indice dovesse essere maggiore di 0 va rivista
+la lista dei metodi dei test del requisito
+\item \textbf{numero di test non mappati sul requisito}: indica il numero di test che sono stati comunque effettuati per verificare il requisito, ma che non sono stati inseriti nella lista dei metodi di test;
+se quest'indice dovesse essere maggiore di 0 va aggiornata la lista dei test sul requisito
+\end{itemize}
+
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.5]{jfeature.png}
+\end{center}
+\caption{Esempio di statistiche fornite da JFeature}
+\end{figure}
+
+\subsubsection{JUnit 4.10}
+Questo tool permette di effettuare test di unit\`a e di integrazione. Tramite la procedura automatizzata messa a disposizione dal plugin di Eclipse, il Programmatore stesso 
+pu\`o (e deve) verificare che i metodi da lui scritti svolgano l'effettivo compito per cui sono stati creati. La struttura del test viene generata automaticamente dallo strumento,
+lasciando al Programmatore la sola codifica del test.
+L'assenza di errori logici nel metodo testato viene data da due elementi:
+\begin{itemize}
+\item \textbf{input}: passando alcuni parametri significativi decisi precedentemente, si crea una simulazione di esecuzione del metodo lasciando a JUnit il compito di elaborazione 
+\item \textbf{output attesi}: partendo dagli input inseriti, JUnit verifica che i risultati della simulazione corrispondano con gli output attesi.
+Il programma mostra una schermata riassuntiva con i tempi di esecuzione dei metodi testati: se tutti terminano correttamente ed in un tempo finito, il test \`e andato a buon fine;
+in alternativa, viene segnalata la natura dell'errore   
+\end{itemize}
+Tutti i metodi non classificabili come moduli devono essere sottoposti a questo tipo di test: solo dopo il superamento potranno procedere con le successive fasi di test.
+JUnit permette lo sviluppo di test di integrazione grazie all'unione automatica di pi\`u test di unit\`a: come sopra, compito del Programmatore \`e unicamente quello di unire
+i test di unit\`a da integrare.
+Interessante funzione aggiuntiva \`e l'identificazione e classificazione delle varie tipologie di errori, suddivise tra ``errors'' (difetti) e ``failures'' (malfunzionamenti). 
+\newpage
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.65]{junit.png}
+\end{center}
+\caption{Risultati generati con JUnit}
+\end{figure}
+
+\subsubsection{EclEmma 2.0.1}
+Insieme a JUnit vengono utilizzate le funzionalit\`a offerte da EclEmma. Questo strumento permette di individuare quali righe di codice vengono effettivamente
+eseguite durante uno specifico test. Per garantire code \underline{coverage} del 100\% \`e necessario che il Programmatore verifichi ogni possibile cammino del codice tracciando quali righe
+non vengono mai eseguite: in tal caso bisogna eliminare tali righe o rivedere la logica del metodo. Oltre che graficamente, EclEmma fornisce statistiche sui segmenti di codice testati.
+Per una visione generale del cammino percorso dall'esecuzione del test, sono utili le statistiche di copertura fornite dallo strumento.
+Solo una volta testati tutti i cammini possibili del metodo, \`e possibile avere un test completo.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.35]{eclemma.png}
+\end{center}
+\caption{Esempio di risultati forniti da EclEmma}
+\end{figure}
+
+\subsubsection{Speed Tracer (GWT 2.4)}
+Di questo strumento, appartenente a GWT (Google Web Toolkit), vengono utilizzate due versioni: l'estensione rilasciata per Google Chrome e il plugin disponibile per Eclipse. Procedendo con la navigazione,
+il grafico prestazionale fornito permette al Programmatore e al Verificatore di avere una visione generale della pagina web testata: per ogni elemento viene fornito il tempo di caricamento
+e la percentuale di banda occupata. Ogni evento viene suddiviso in sotto-eventi in modo da poter meglio analizzare eventuali rallentamenti e individuarne quindi possibili cause.
+Se alcune risorse necessitano di un tempo di caricamento eccessivo, \`e compito del Programmatore rendere pi\`u agili le strutture coinvolte. Un'ulteriore funzionalit\`a permette
+di salvare su file il resoconto dell'analisi permettendo al gruppo di realizzare un grafico ``dinamico'' dell'andamento prestazionale delle pagine web del sistema.
+Con l'avanzamento del progetto, il sito sviluppato dovrebbe diventare sempre pi\`u prestante, caratteristica rappresentata da una curva crescente nel tempo. 
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.4]{speedtracer.png}
+\end{center}
+\caption{Esempio analisi dati di Speed Tracer}
+\end{figure}
+
+\subsubsection{Markup Validation Service}
+Raggiungibile all'indirizzo \url{http://validator.w3.org/} permette di verificare se il sito di cui si passa l'URL adotti o meno gli standard definiti da W3C. Tramite un'interfaccia intuitiva, lo strumento di validazione segnala quanti errori e quanti warning sono presenti nel codice della pagina analizzata, fornendo una descrizione dettagliata sulle possibili cause. Questa descrizione permette al Programmatore di individuare con facilit\`a la fonte dell'errore e di correggerla.
+\newpage
+\subsubsection{CSS Validation Service}
+Analogamente a quanto descritto sopra, tramite lo strumento raggiungibile all'indirizzo \url{http://jigsaw.w3.org/css-validator/} \`e possibile avere un'analisi dei propri fogli di stile. Per ogni pagina testata vengono forniti i segmenti di codice non valido e la causa di tale segnalazione. 
+
+\subsubsection{XML Validator}
+Strumento raggiungibile all'indirizzo \url{http://www.w3schools.com/xml/xml_validator.asp} che permette di controllare che il documento \underline{XML} sia ben formato. In presenza di errori 
+il tool ne segnala la presenza identificando la riga in cui \`e presente l'anomalia, fornendo anche un suggerimento per la risoluzione.
+
+
+\newpage
+\section{Gestione dei cambiamenti}
+Durante la creazione del software EQuery tutti i prodotti realizzati sono soggetti a cambiamenti che mirano a correggono errori, evolvendo il prodotto.
+\subsection{Cambiamenti correttivi e di evoluzione}
+La procedura che comporta un cambiamento ad un documento o un file di codice \`e la seguente:
+\begin{enumerate}
+\item individuazione dell'errore da parte di un componente del team con relativa apertura del ticket di segnalazione, come spiegato nel capitolo ``Tecnologie'' 
+\item il Responsabile verifica la presenza dell'errore ed interviene commissionando all'autore del documento la correzione dell'errore, stabilendone la priorit\`a attraverso lo strumento di ticketing
+\item la persone incaricata dal Responsabile interviene correggendo il problema riscontrato e chiedendo un'ulteriore verifica del prodotto
+\item il prodotto viene revisionato dal Verificatore seguendo le norme elencate nel capitolo ``Attivit\`a di verifica''(nel caso in cui il Verificatore dovesse riscontrare ulteriori errori ha la facolt\`a di aprire un altro ticket o di non far concludere il ticket esistente richiedendo un ulteriore intervento del responsabile)
+\item il Responsabile viene avvisato dell'esito positivo del processo di verifica e di conseguenza chiude il ticket 
+\end{enumerate}
+\subsection{Cambiamenti in seguito a revisione}
+In seguito ad ogni revisione il gruppo si impegna a correggere gli errori evidenziati dal docente nel minor tempo possibile, in vista della successiva revisione. \`E compito del Responsabile del progetto indire un incontro con l'intero team per provvedere all'analisi e verifica  degli errori evidenziati. In caso di correzioni non chiare o dubbie, il gruppo si rivolger\`a al Docente per chiedere delucidazioni riguardanti il documento che elenca le correzioni da apportare; ad ogni componente \`e chiesto di apportare le opportune correzioni ai documenti da lui redatti.
+\subsection{Gestione dei rischi}
+All'interno del documento ``\textit{piano-di-progetto\_3.0.pdf}'' vengono elencati e descritti i rischi che si possono incontrare durante l'attivit\`a di progetto. Alcuni di essi possono comportare cambiamenti di varia entit\`a ai prodotti, tra questi:
+\begin{itemize}
+\item \textbf{Errori in fase di analisi dei requisiti}: solitamente individuati nella RR possono ritardare la fase di progettazione. Per non incombere in queste problematiche durante la fase di analisi, ogni dubbio sorto nella lettura del capitolato deve essere spiegato e chiarito col Committente. La correzione degli errori emersi in seguito alla revisione dei requisiti deve essere il pi\`u rapida e completa possibile: una riorganizzazione dei ruoli assegnati inizialmente \`e fondamentale per la miglior gestione dell'attivit\`a di recupero, comportando minori ritardi nelle successive attivit\`a pianificate
+\item \textbf{Errori in fase di analisi di fattibilit\`a e preventivo economico}: solitamente individuati nella RR, comportano un ritardo dovuto al completo ricalcolo del preventivo economico e delle risorse e costi. Una maggiorazione del preventivo comporterebbe un rifiuto da parte del Committente, di conseguenza il ricalcolo delle risorse, delle ore e dei costi pu\`o comportare un lavoro complesso. Per sopperire a questo problema l'Amministratore supporta il Responsabile in questa fase
+\item \textbf{Assenza componenti a causa di impegni universitari e personali}: si pu\`o verificare in qualsiasi fase del progetto comportando assenze anche prolungate di alcuni componenti del gruppo. Per ovviare a questa situazione si attua un cambiamento dei ruoli e delle persone, cercando di coprire il lavoro delle persone assenti aumentando il carico di lavoro di quelle presenti. Nel caso non si riuscissero a completare gli obbiettivi, il gruppo deve posticipare la consegna causando un effetto domino sulle seguenti scadenze
+\end{itemize}
+L'analisi dei rischi deve evolversi parallelamente al progetto con conseguente ricalcolo dei criteri di rischio. 
+\subsection{Storico}
+Il registro delle modifiche fa riferimento per ogni cambiamento del documento. Viene inoltre conservata all'interno del \underline{repository} una copia del documento relativo al momento della consegna, in modo da avere sempre disponibile un confronto con una versione definitiva precedente. Prima di riconsegnare i documenti corretti, essi riattraversano il processo descritto nel capitolo ``Attivit\`a di verifica''.\\
+\\
+Per assicurare una maggior consistenza dei file il Responsabile provvede a eseguire un backup giornaliero pianificato alle ore 19:00 dell'intero repository. Verranno comunque mantenute copie di classi con la relativa versione anche se obsolete o non utilizzate.
+
+\newpage
+\section{Tecnologie}
+L'intero team si \`e accordato per utilizzare le medesime tecnologie, secondo le richieste progettuali emerse durante l'analisi dei requisiti.
+\subsection{Linguaggi di programmazione}
+Dall'analisi dei requisiti \`e emersa una lista di linguaggi di programmazione richiesti ed altri a libera scelta.
+\begin{itemize}
+\item \textbf{Java SE 6} v1.6.0 (Mustang) \`e un linguaggio di programmazione ad alto livello. \`E fortemente orientato ad oggetti e non vincolato alla piattaforma \underline{hardware}. Sar\`a adottato per la realizzazione della struttura portante del \underline{software} EQuery. Per tutte le convenzioni adottate dal linguaggio far\`a fede il documento citato nei riferimenti informativi. Il sito di riferimento \`e:
+\url{http://www.java.com/} [cit. \url{http://it.wikipedia.org/wiki/Java_%28linguaggio%29}]
+\item \textbf{SQL} (Structured Query Language) \`e un linguaggio di interrogazione di \underline{database} progettato per leggere, modificare e gestire dati memorizzati.
+[cit. \url{http://it.wikipedia.org/wiki/SQL}] 
+\item \textbf{HTML5} (Hyper Text Markup Language) \`e un linguaggio di \underline{markup} per la progettazione di pagine \underline{web}. Richiesto espressamente dai requisiti del capitolato per la creazione dell'interfaccia utente (\underline{GUI}). [cit. \url{http://it.wikipedia.org/wiki/HTML5}]
+\item \textbf{\LaTeX} v1.7.0 \`e  un linguaggio di markup usato per la preparazione di testi basato sul programma di composizione tipografica \TeX. Utilizzato largamente per la realizzazione di tutta la documentazione. Il sito di riferimento \`e: \\
+\url{http://www.latex-project.org/}
+[cit. \url{http://it.wikipedia.org/wiki/LaTeX}]
+\item \textbf{XML} (eXtensible Markup Language) \`e un \underline{metalinguaggio} di markup. Definisce un meccanismo sintattico che consente di estendere o controllare il significato di altri linguaggi marcatori. [cit. \url{http://it.wikipedia.org/wiki/XML}]
+\item \textbf{CSS3} (Cascading Style Sheets o Fogli di stile) \`e un linguaggio usato per definire la formattazione di documenti \underline{HTML} e XHTML.[cit. \url{www.w3.org/TR/CSS}].
+[cit. \url{http://it.wikipedia.org/wiki/CSS}]
+\item \textbf{API} (Application Programming Interface) \`e un insieme di procedure disponibili al programmatore, raggruppate a formare un set di strumenti specifici per l'espletamento di un determinato compito all'interno di un certo programma. Servono al programmatore per facilitare la scrittura del codice fornendo alcuni costrutti gi\`a pronti. [cit. \url{http://it.wikipedia.org/wiki/Application_programming_interface}
+\item \textbf{UML} v2.0 (Unified Modeling Language) \`e un linguaggio di modellazione e specifica basato sul paradigma object-oriented. Il linguaggio \`e stato progettato con l'obiettivo esplicito di facilitare il supporto software alla costruzione di modelli. Il sito di riferimento \`e: \url{http://www.uml.org/} [cit. \url{http://it.wikipedia.org/wiki/Unified_Modeling_Language}]
+\newpage
+\item \textbf{JSP} (JavaServer Pages) letto anche talvolta come Java Scripting Preprocessor, \`e una tecnologia Java per lo sviluppo di applicazioni Web che forniscono contenuti dinamici in formato \underline{HTML} o \underline{XML}. Si basa su un insieme di speciali tag con cui possono essere invocate funzioni predefinite o codice Java. Fornisce anche la possibilit\`a di aggiungere librerie di nuovi tag che vanno ad estendere quelle gi\`a presenti. Il sito di riferimento \`e: \url{http://www.oracle.com/technetwork/java/javaee/jsp/index.html} [cit. \url{http://it.wikipedia.org/wiki/JavaServer_Pages}]
+\item \textbf{JavaScript} v5.1 \`e un linguaggio di \underline{scripting} orientato agli oggetti comunemente usato nei siti web, formalizzato con una sintassi pi\`u vicina a quella del linguaggio Java di Oracle. L'idea di base \`e che il programma ospite (quello che ospita ed esegue lo script) fornisca allo script un'\underline{API} ben definita, che consente l'accesso ad operazioni specifiche, la cui implementazione \`e a carico del programma ospite stesso.
+[cit. \url{http://it.wikipedia.org/wiki/JavaScript}]
+\end{itemize}
+\subsection{Plugin}
+\begin{itemize}
+\item \textbf{Eclipse Metrics Plugin} v1.3.6 si tratta di un plugin per Eclipse che consente di verificare la genuinit\`a del proprio codice. Esso analizza la metrica del codice durante costrutti ciclici e avvisa l'utente in caso di possibili errori. Consente inoltre di esportare su file \underline{XML} questi valori in modo da avere un riscontro visivo tramite istogrammi. Il sito di riferimento \`e \url{http://marketplace.eclipse.org/content/eclipse-metrics-plugin-continued}
+\item \textbf{FindBugs} v2.0 \`e uno strumento di rilevazione dei difetti-errori per Java che utilizza l'analisi statica per cercare pi\`u di 200 modelli di bug, come ad esempio dereferenziazioni a puntatore nullo e cliclo infinito. Esso \`e in grado di identificare centinaia di gravi difetti nelle applicazioni di grandi dimensioni. FindBugs \`e open source e facile da interfacciare con Eclipse. Il sito di riferimento \`e:
+\url{http://findbugs.sourceforge.net/}
+\item \textbf{JUnit} v4.10 \`e uno strumento che permette il test di unit\`a per il linguaggio di programmazione Java. Il sito di riferimento \`e: 
+\url{http://www.junit.org/}
+\item \textbf{SpeedTracer} \textbf{GPE} v2.4 (Google Plugin for Eclipse) \`e un insieme di strumenti di sviluppo software che permette agli sviluppatori Java di progettare rapidamente, ottimizzare e distribuire applicazioni basate su \underline{cloud}. Inoltre offre la possibilit\`a di testare le prestazioni con Tracer di velocit\`a delle proprie pagine. Il sito di riferimento \`e:
+\url{http://code.google.com/intl/it-IT/eclipse/docs/download.html}  
+\item \textbf{EclEmma Java Code Coverage} v2.0.1 \`e uno strumento che permette di analizzare lo stato di copertura (coverage) direttamente durante la stesura del codice Java. Il sito di riferimento \`e:
+\url{http://www.eclemma.org/}
+\item \textbf{JFeature - Open Source Requirement Coverage} v1.2 \`e uno strumento \underline{open} \underline{source} che analizza lo stato di coverage ponendo l'attenzione sui requisiti. Esso consente di sfruttare le pratiche di sviluppo standard per ottenere un quadro pi\`u chiaro dei requisiti contemplati dal codice. Il sito di riferimento \`e
+\url{http://marketplace.eclipse.org/content/jfeature-open-source-requirement-coverage-tool}
+\newpage
+\item \textbf{JavaScript Development Tools} (JSDT) \`e un plugin che consente di editare codice JavaScript all'interno di Eclipse. \`E ricco di molte funzioni di editing, ma anche di appositi strumenti per l'individuazione e la correzione di errori. Il sito di riferimento \`e:
+\url{http://www.eclipse.org/webtools/jsdt/}
+\item \textbf{Google Web Toolkit} v2.4.0 (GWT) \`e un set di tool \underline{open source} che permette agli sviluppatori web di creare e manutenere complesse applicazioni \underline{front-end} Javascript scritte in Java. Il sito di riferimento \`e:
+\url{http://code.google.com/intl/it-IT/webtoolkit/}
+\item \textbf{Subclipse} v1.6 \`e uno strumento che si integra con Eclipse e fornisce un servizio di versionamento per il codice che viene scritto. Il sito di riferimento \`e:
+\url{http://subversion.apache.org/}
+\end{itemize} 
+\subsection{Versionamento del software e repository}
+\subsubsection{Codice}
+Dopo un'attenta analisi dei vari \underline{repository} disponibili nel \underline{web}, il gruppo ha concordato l'utilizzo di \underline{Assembla} per il controllo di versione del prodotto software EQuery.
+Gli aspetti che sono stati considerati sono:
+\begin{itemize}
+\item interfacciamento con \underline{SVN}
+\item \underline{user-friendly}
+\item \underline{freeware}
+\end{itemize}
+Il sito di riferimento \`e: \url{http://www.assembla.com/}.\\
+Assembla mette a disposizione uno strumento di \underline{ticketing} che utilizzeremo per gestire casi e anomalie.
+La struttura del \underline{ticket} \`e la seguente:
+\begin{itemize}
+\item \textbf{Summary:} nome del ticket, indica in modo sintetico l'anomalia riscontrata
+\item \textbf{Created on:} data di creazione
+\item \textbf{Reported by:} colui che l'ha creato
+\item \textbf{Assigned to:} colui che dovr\`a occuparsi delle correzioni
+\item \textbf{Milestone:} indica che \`e necessaria una correzione in vista della revione precisata
+\item \textbf{Status:}\\
+In progress
+\begin{itemize}
+\item \textbf{new:} appena creato
+\item \textbf{accepted:} approvato dall'amministratore
+\item \textbf{test:} l'anomalia descritta nel ticket \`e in fase di correzione
+\end{itemize}
+Closed
+\begin{itemize}
+\item \textbf{invalid:} non valido, un ticket per la stessa anomalia era gi\`a stato creato e l'amministratore lo rigetta
+\item \textbf{fixed:} corretto e approvato
+\end{itemize}
+\item \textbf{Priority:} highest(1), high(2), normal(3), low(4), lowest(5)
+%\item \textbf{Component:}
+\item \textbf{Descrizione:} contiene le informazioni dettagliate e aggiuntive riguardanti l'anomalia riscontrata
+\end{itemize}
+\subsubsection{Documentazione}
+Per avere uno spazio \underline{web} di appoggio con cui scambiare file, si \`e deciso di utilizzare Dropbox. Questo portale offre la possibilit\`a di scaricare e installare sulla propria macchina il software Dropbox senza doversi appoggiare al sito web. In questo modo si riesce ad avere uno scambio di file pi\`u rapido.
+\subsection{Protocolli e servizi}
+Uno dei requisiti del capitolato \`e l'interfacciamento del prodotto software EQuery con le seguenti architetture:
+\begin{itemize}
+\item \textbf{HTTP} (Hypertext Transfer Protocol) \`e usato come principale sistema per la trasmissione d'informazioni sul web. Le specifiche del protocollo sono gestite dal World Wide Web Consortium (\underline{W3C}). [cit. \url{http://it.wikipedia.org/wiki/Hyper_Text_Transfer_Protocol}]
+\item \textbf{REST} (Representational State Transfer) \`e un tipo di architettura software per i sistemi di ipertesto distribuiti. REST si riferisce ad un insieme di principi di architetture di rete che delineano come le risorse sono definite e indirizzate. Il termine \`e spesso usato per descrivere ogni semplice interfaccia che trasmette dati su \underline{HTTP}. [cit. \url{http://it.wikipedia.org/wiki/Representational_State_Transfer}]
+\item \textbf{SSO} (Single Sign-On) \`e un sistema specializzato che offre all'utente la possibilit\`a di autenticarsi un'unica volta nel sistema: senza dover reinserire nuovamente le credenziali di accesso, all'utente \`e permesso il pieno utilizzo delle funzionalit\`a a lui dedicate.
+\item \textbf{CAS} (Central Authentication Service) \`e un protocollo SSO utilizzato nel web. Il suo scopo \`e quello di consentire a un utente di accedere a pi\`u applicazioni, fornendo le proprie credenziali una sola volta. Inoltre permette alle applicazioni web di autenticare gli utenti senza accedere alle credenziali di sicurezza di un utente. [cit. \url{http://en.wikipedia.org/wiki/Central_Authentication_Service}]
+\end{itemize}
+
+\subsection{Sistemi operativi}
+Per la realizzazione del \underline{software} e lo svolgimento del progetto, il team LOOP ha concordato che i suoi componenti sfrutteranno nei loro personal computer i due seguenti sistemi operativi:
+\begin{itemize}
+\item Linux Ubuntu v10.04 \underline{LTS} e successive (\url{http://www.ubuntu.com/})
+\item Windows 7 (\url{http://www.microsoft.com/})
+\end{itemize}
+Questa decisione \`e stata presa tenendo conto degli strumenti Hardware e Software di cui dispongono i componenti del gruppo.
+\newpage
+
+\section{Software utilizzati}
+Segue una lista delle tecnologie software utilizzate per la realizzazione di EQuery. I seguenti software sono disponibili per sistemi operativi Microsoft (Windows Vista e Windows 7 ) e Linux (Ubuntu 10.04). Nei casi di \underline{multipiattaforma} \`e stata indicata la versione di entrambi i sistemi operativi.
+\begin{itemize}
+\item \textbf{Browser}: Firefox Mozilla v9.0.1, Chrome v16.0.912.75, Opera v11.52, Safari v5.1.2, Internet Explorer v9.0.30. Utilizzati per i test del prodotto e per le ricerche. I rispettivi siti di riferimento sono: \\
+\textbf{-  Firefox} \url{http://www.mozilla.org/}\\
+\textbf{-  Chrome} \url{http://www.google.com/chrome?hl=it/}\\
+\textbf{-  Opera} \url{http://www.opera.com/} \\
+\textbf{-  Safari} \url{http://www.apple.com/it/safari/}\\
+\textbf{-  Internet Explorer} \url{http://windows.microsoft.com/}
+\item \textbf{GanttProject} v2.0.10 \`e un programma per la gestione e la creazione di diagrammi Gantt utilizzati per la pianificazione delle attivit\`a del gruppo. Nello specifico \`e stato adottato per rappresentare il carico di lavoro di ogni utente nella realizzazione del progetto, rispetto ad un intervallo temporale ben definito. Il sito di riferimento \`e: \url{http://www.ganttproject.biz/}
+\item \textbf{Eclipse Indigo} v3.7.1 \`e un ambiente di sviluppo integrato \underline{multilinguaggio} e \underline{multi-} \underline{piattaforma} open source. Utilizzato per la programmazione del linguaggio Java, si interfaccia con molti altri linguaggi, grazie ad una ricca collezione di \underline{plugin}. Il sito di riferimento \`e: \url{http://www.eclipse.org/}
+\item \textbf{\TeX Maker} v3.0.2 \`e un \underline{editor} di testo per il linguaggio \LaTeX. Permette un'agile gestione del potente linguaggio di \underline{editing}, automatizzandone numerosi funzioni. Sar\`a utilizzato per la realizzazione dei documenti. Il sito di riferimento \`e: \url{http://www.xm1math.net/texmaker/}
+\item \textbf{Kile} v2.1 \`e un editor \TeX - \LaTeX per l'ambiente desktop \underline{KDE}, utilizzato per la stesura dei documenti nei laboratori scolastici. Il sito di riferimento \`e:
+\url{http://kile.sourceforge.net/}
+\item \textbf{BOUML} v4.23 \`e un programma grafico ideato per la rappresentazione di diagrammi \underline{UML}. Supporta totalmente gli standard UML 2.0 e offre la funzionalit\`a, grazie ad un \underline{ID} univoco associato ad ogni utente, di lavorare cooperativamente.  Il sito di riferimento \`e: 
+\url{http://bouml.free.fr/}
+\item \textbf{MySQL} v5.5.18 \`e un \underline{database} di tipo relazionale costituito da un'interfaccia a caratteri e da un \underline{server}. Il sito di riferimento \`e: \url{	http://www.mysql.com/}
+\item \textbf{SQLite} v3.7.9 \`e una libreria software scritta in linguaggio C che implementa un \underline{DBMS} SQL di tipo \underline{ACID} integrabile in diverse applicazioni. Il sito di riferimento \`e:
+\url{http://www.sqlite.org/}
+\item \textbf{Gimp} v2.6.11 \`e un programma libero ed \underline{open source} di foto-ritocco. Utilizzato maggiormente per la creazione di grafici e loghi, ridimensionamento e ritaglio di foto. Il sito di riferimento \`e:
+\url{www.gimp.org/}
+\item \textbf{Skype} v2.2.0.35 Linux, v5.6.0.110 Windows. \`E un programma di messaggistica istantanea e \underline{VoIP}. Consente di comunicare tra utenti sia con messaggi testuali che con \underline{chat} vocali. Il sito di riferimento \`e: \url{http://www.skype.com/}
+\item \textbf{Dropbox} v1.2.48  \`e un software multi-piattaforma, \underline{cloud based} che offre un servizio di file \underline{hosting} e sincronizzazione automatica di file tramite web. Il sito di riferimento \`e: \url{https://www.dropbox.com/install?os=lnx}
+\item \textbf{Microsoft Excel} v2010 \`e un programma per la gestione dei fogli elettronici e di calcolo. Si \`e utilizzato questo software per disegnare istogrammi ed aerogrammi inclusi nei documenti. Il sito di riferimento \`e: \url{http://office.microsoft.com/it-it/excel/}
+\item \textbf{LibreOffice} v3.4.5 \`e una raccolta di programmi per l'ufficio che supporta l'estensione ``.odt''. \`E un software libero e il sito di riferimento \`e: \url{http://www.libreoffice.org/}
+\item \textbf{Apache Tomcat} v7.0.25 \`e un server web \underline{open source} sviluppato da Apache Software Foundation (ASF). Tomcat implementa \underline{Java Servlet} e \underline{JavaServer Pages} specifiche di Oracle Corporation.
+Il sito di riferimento \`e \url{http://tomcat.apache.org/}
+\end{itemize}
+\subsection{Installazione Software}
+Per ogni software \underline{opensource} elencato, viene specificato il sito di riferimento, nel quale si pu\`o trovare il file di installazione sia per piattaforma Windows che Linux. 
+
+\subsubsection{Ambiente Windows}
+In ambiente Windows sar\`a sufficiente confrontare le specifiche del programma (elencate nel sito di riferimento) con le caratteristiche del proprio PC, e nel caso siano soddisfatte si pu\`o installare il prodotto eseguendo il file di installazione.
+
+\subsubsection{Ambiente Linux}
+In ambiente Linux si pu\`o procedere in modi diversi per l'installazione del software:
+\begin{itemize}
+\item Software Center: su distribuzioni Ubuntu di Linux e analoghe, \`e sempre presente uno strumento di sistema che permette attraverso una ricerca testuale di trovare il software da installare. La procedura \`e guidata e semplice, basta seguire le istruzioni date dallo strumento per terminare in modo corretto la procedura 
+\item Terminale: permette un'installazione pi\`u specifica. Si pu\`o utilizzare il terminale presente all'interno di ogni distribuzione Linux, appoggiandosi alle istruzioni inserite sul sito di riferimento del programma.
+Nello specifico per sistemi operativi Linux distribuzione Ubuntu, il comando per l'installazione da terminale \`e il seguente:
+
+\begin{center}
+``sudo apt-get install nome-del-programma''
+\end{center}
+
+\end{itemize}
+\newpage
+
+\section{Consegna}
+Per ogni revisione, il gruppo LOOP si impegna a consegnare entro le date prefissate i documenti all'interno di un unico file compresso con estensione ``.zip''. Al suo interno i file saranno suddivisi in base all'uso, interno o esterno.
+\begin{itemize}
+\item \textbf{Esterno} documento consegnato ad entit\`a esterne al gruppo
+\item \textbf{Interno} documento riservato ai membri del team LOOP
+\end{itemize} 
+\newpage
+
+\section{Presentazione}
+Per ogni revisione il gruppo \`e tenuto a giustificare oralmente le scelte fatte. Il team ha deciso di sostenere questa prova orale con il supporto di slide grafiche e testuali. Le slide sono create con gli strumenti messi a disposizione dalla suite LibreOffice 3, in particolare sfruttando il software Impress. Quest'ultimo permette la creazione di slide di diverso genere con possibilit\`a di inserire animazioni di transizione.
+Ogni slide contiene:
+\begin{itemize}
+\item titolo della slide 
+\item logo testuale del team
+\item riferimento alla materia
+\item numero di pagina
+\end{itemize}
+Ogni presentazione ha una slide introduttiva che contiene:
+\begin{itemize}
+\item logo del gruppo
+\item riferimento al capitolato d'appalto scelto
+\item riferimento alla revisione
+\item mail del gruppo
+\item data della presentazione
+\end{itemize}
+La presentazione \`e suddivisa in sezioni che si riferiscono ai documenti presentati.
+
+\end{document}
+
+
